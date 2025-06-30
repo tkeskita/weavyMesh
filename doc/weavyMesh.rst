@@ -66,6 +66,13 @@ cells: After weaving is done, there should be no voids left between
 the primary and the secondary elements (is this possible in
 practice?).
 
+It's also possible to add a preliminary stage which tries weave
+hexahedrons: If primary face is a quad, and point normals and face
+normals are aligned well enough on both primary and secondary sides
+(surface is not curving much locally), then a hex can be created in
+between the two end faces (assuming quads for side faces are
+OK). Weave the rest with pyramids / tetrahedrons.
+
 .. image:: images/weavy_algorithm_05.png
 
 5. Subdivision of cells next to boundary surfaces. Cells are cut to
